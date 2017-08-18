@@ -17,7 +17,7 @@ tmpxmlloc="/var/tmp"
 # Loop around CSV file. Reading record line by line.
 # Have to do a test to make sure we get the last line. Missing newline characters cause that fault.
 # I blame Excel for this.
-while IFS=, read -r user group || [ -n "$user" ]
+while IFS=$'\r', read -r user group || [ -n "$user" ]
 do
 	# Remove the carriage return, if it exists. Again I blame Excel for this hack.
 	username=$( echo $user | tr -d '\r' )
