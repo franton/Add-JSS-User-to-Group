@@ -55,7 +55,7 @@ do
 EOF
 
 	# curl the file to the JSS API
-	curl -X POST -k -u ${apiuser}:${apipass} ${jssurl}JSSResource/usergroups/id/0 -d @$file -H "Content-Type:text/xml"
+	curl -X POST -k -u ${apiuser}:${apipass} ${jssurl}JSSResource/usergroups/id/0 -d @"${file}" -H "Content-Type:text/xml"
 
 	# Delete the temp file
 	rm "${file}"
